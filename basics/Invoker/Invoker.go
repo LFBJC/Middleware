@@ -1,11 +1,11 @@
 package Invoker
 
 import (
-	"MiddlewareImplementation/basics/ChatServer"
-	"MiddlewareImplementation/basics/FTServer"
-	"MiddlewareImplementation/basics/NameService"
-	"MiddlewareImplementation/basics/RequestHandlers"
-	"MiddlewareImplementation/basics/Shared"
+	"../ChatServer"
+	"../FTServer"
+	"../NameService"
+	"../RequestHandlers"
+	"../Shared"
 	"encoding/json"
 )
 

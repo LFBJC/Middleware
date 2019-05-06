@@ -1,8 +1,8 @@
 package FTProxy
 
 import (
-	"MiddlewareImplementation/basics/Requestor"
-	"MiddlewareImplementation/basics/Shared"
+	"../Requestor"
+	"../Shared"
 )
 
 type FT struct {

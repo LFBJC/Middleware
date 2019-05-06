@@ -1,8 +1,8 @@
 package ChatServer
 
 import (
-	"MiddlewareImplementation/basics/FTProxy"
-	"MiddlewareImplementation/basics/NamingProxy"
+	"../FTProxy"
+	"../NamingProxy"
 	. "strings"
 )
 type Chat struct {

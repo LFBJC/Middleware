@@ -1,8 +1,8 @@
 package NamingProxy
 
 import (
-	"MiddlewareImplementation/basics/Requestor"
-	"MiddlewareImplementation/basics/Shared"
+	"../Requestor"
+	"../Shared"
 )
 
 type NS struct {

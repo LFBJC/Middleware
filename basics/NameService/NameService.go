@@ -1,7 +1,7 @@
 package NameService
 
 import (
-	"MiddlewareImplementation/basics/Shared"
+	"../Shared"
 	"reflect"
 )
 

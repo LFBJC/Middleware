@@ -1,8 +1,8 @@
 package ChatProxy
 
 import (
-	"MiddlewareImplementation/basics/Requestor"
-	"MiddlewareImplementation/basics/Shared"
+	"../Requestor"
+	"../Shared"
 )
 
 type Chat struct {

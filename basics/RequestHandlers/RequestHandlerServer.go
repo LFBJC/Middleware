@@ -5,18 +5,17 @@ import (
 	"encoding/binary"
 	"fmt"
 	"net"
+	"strconv"
 )
-
-//É necessario função invoke em invoker que retorne []byte 
 
 type SRH struct {
 	IP string
 	Port int
 }
 func (h SRH) Recieve() ([] byte, net.Conn) {
-	l, err := net.Listen("tcp",h.IP+string(h.Port))
+	l, err := net.Listen("tcp",h.IP+strconv.Itoa(h.Port))
 	if err !=nil {
-		fmt.Print("erro ao tentar escutar a porta "+string(h.Port)+" "+string(err.Error()))
+		fmt.Print("erro ao tentar escutar a porta "+strconv.Itoa(h.Port)+", "+string(err.Error()))
 	}
 	conn, err2 := l.Accept()
 	if err2 !=nil {
@@ -47,67 +46,3 @@ func (h SRH) Send(msg []byte, conn net.Conn) {
 	}
 }
 
-
-/*type handleItf struct{
-	data []byte
-	addressPort string
-}
-*/
-/*
-func (h *handleItf) handlerRecieve(){
-	for {
-		l, err := net.Listen("tcp", h.addressPort)
-		if err != nil {
-			log.Fatal(err)
-		}
-		conn, err := l.Accept()
-		if err != nil {
-			log.Fatal(err)
-		}
-		go func(c net.Conn) {
-			// Echo all incoming data.
-			mensagem, erro3 := bufio.NewReader(conn).ReadString('\n')
-			if erro3 != nil {
-				fmt.Println(erro3)
-				os.Exit(3)
-			}
-			msgRecived := handleItf{[],"","",""}
-			UmsrMsg := json.Unmarshall(mensagem,&h)
-
-
-			//c.Write(h.data)
-			//c.Close()
-			io.Copy(c, c)
-			c.Write(h.Invoker.invoke())
-			// Shut down the connection.
-			c.Close()
-		}(conn)
-	}
-}*/
-/*
-func (h *handleRep) handlerSend(){
-	for {
-		conn, err := l.Accept()
-		if err != nil {
-			log.Fatal(err)
-		}
-		go func(c net.Conn) {
-			// Echo all incoming data.
-
-			//c.Write(h.data)
-			//c.Close()
-			io.Copy(c, c)
-			c.takeCommand()
-			fmt.Print(c)
-			// Shut down the connection.
-			c.Close()
-		}(conn)
-	}
-	
-}
-
-
-func main() {
-	//handleRep{[],0,":8081",}
-
-}*/

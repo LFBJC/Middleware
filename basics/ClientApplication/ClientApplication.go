@@ -1,8 +1,8 @@
 package main
 
 import(
-	"MiddlewareImplementation/basics/ChatProxy"
-	"MiddlewareImplementation/basics/NamingProxy"
+	"../ChatProxy"
+	"../NamingProxy"
 	"bufio"
 	"fmt"
 	"os"
@@ -20,7 +20,7 @@ func main() {
 	fmt.Println("para enviar mensagens basta digitá-las e apertar enter");
 	fmt.Println("escreva \":f \" + nome do arquivo para enviar e \":d \" + nome do arquivo para baixar e em seguida aperte enter");
 	fmt.Println("escreva \":l \" e aperte enter para ver os arquivos disponiveis");
-	nameServer := NamingProxy.NS{"127.0.0.1",1024,0};
+	nameServer := NamingProxy.NS{"127.0.0.1:",1025,0};
 	chat := ChatProxy.Chat(nameServer.Lookup("Chat"));
 	for {
 		//é preciso definir que tipo é esse chat e colocar como tipo que chama nas funcões Listen e Send

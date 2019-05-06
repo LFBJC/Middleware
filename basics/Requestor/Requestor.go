@@ -15,5 +15,6 @@ func Invoke(remote_object Shared.AOR,typeMsg string, action string, args interfa
 	if err1 != nil {
 		fmt.Println("erro ao tentar converter a mensagem em json")
 	}
-	return crh.Send(msgBytes)
+	conn := crh.Send(msgBytes)
+	return crh.Recieve(conn)
 }
